@@ -1,0 +1,100 @@
+{
+  "_metadata": {
+    "major_version": 2,
+    "minor_version": 1
+  },
+  "display_information": {
+    "name": "ReservationBot",
+    "description": "Reserve shared resources from Slack channels.",
+    "long_description": "ReservationBot helps Slack workspaces reserve and manage shared resources directly from Slack. Each resource belongs to a channel, supports flexible capacity and hierarchy rules, and can be managed by workspace admins, owners, delegated user groups, or channel managers. The app supports private reminders, public schedule posts, audit notifications, tenant-specific settings, and organization deployment for Enterprise Grid.",
+    "background_color": "#1F7A5A"
+  },
+  "features": {
+    "app_home": {
+      "home_tab_enabled": true,
+      "messages_tab_enabled": true,
+      "messages_tab_read_only_enabled": false
+    },
+    "bot_user": {
+      "display_name": "ReservationBot",
+      "always_online": false
+    },
+    "slash_commands": [
+      {
+        "command": "/reserve",
+        "url": "https://reservationbot.example.com/slack/commands",
+        "description": "Create, edit, or cancel a resource reservation.",
+        "usage_hint": "room-a 1735689600 1735693200 Planning *Q3* :calendar:",
+        "should_escape": false
+      },
+      {
+        "command": "/resources",
+        "url": "https://reservationbot.example.com/slack/commands",
+        "description": "List and manage reservable resources for this channel.",
+        "usage_hint": "list",
+        "should_escape": false
+      },
+      {
+        "command": "/reservationbot",
+        "url": "https://reservationbot.example.com/slack/commands",
+        "description": "Open ReservationBot settings, reminders, and help.",
+        "usage_hint": "settings",
+        "should_escape": false
+      }
+    ]
+  },
+  "oauth_config": {
+    "redirect_urls": [
+      "https://reservationbot.example.com/slack/oauth/callback"
+    ],
+    "scopes": {
+      "bot": [
+        "commands",
+        "chat:write",
+        "chat:write.public",
+        "chat:write.customize",
+        "channels:read",
+        "groups:read",
+        "im:write",
+        "team:read",
+        "usergroups:read",
+        "users:read"
+      ]
+    },
+    "token_management_enabled": true
+  },
+  "settings": {
+    "org_deploy_enabled": true,
+    "socket_mode_enabled": false,
+    "token_rotation_enabled": true,
+    "is_hosted": false,
+    "function_runtime": "remote",
+    "interactivity": {
+      "is_enabled": true,
+      "request_url": "https://reservationbot.example.com/slack/interactivity"
+    },
+    "event_subscriptions": {
+      "request_url": "https://reservationbot.example.com/slack/events",
+      "bot_events": [
+        "app_home_opened",
+        "member_joined_channel",
+        "member_left_channel",
+        "channel_archive",
+        "channel_deleted",
+        "channel_rename",
+        "channel_unarchive",
+        "group_archive",
+        "group_deleted",
+        "group_rename",
+        "group_unarchive",
+        "team_domain_change",
+        "team_rename",
+        "user_change"
+      ]
+    },
+    "incoming_webhooks": {
+      "incoming_webhooks_enabled": false
+    }
+  }
+}
+

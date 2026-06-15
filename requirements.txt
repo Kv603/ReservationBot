@@ -1,0 +1,4 @@
+aws-lambda-powertools==3.13.0
+aws-xray-sdk==2.14.0
+boto3==1.38.36
+fastapi==0.115.14

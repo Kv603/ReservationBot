@@ -1,0 +1,5 @@
+-r requirements.txt
+aws-cdk-lib==2.198.0
+constructs==10.4.2
+pytest==8.4.0
+
