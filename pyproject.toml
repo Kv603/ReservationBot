@@ -1,3 +1,7 @@
 [tool.pytest.ini_options]
 pythonpath = ["api"]
 testpaths = ["tests"]
+[project]
+name = "reservationbot"
+version = "0.1.0"
+dependencies = []
